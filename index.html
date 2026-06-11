@@ -84,12 +84,13 @@
         </nav>
     </header>
 
-    <div class="container">
-        <!-- প্রথম পোস্ট -->
+  <div class="container">
+        {% for post in site.posts %}
         <div class="post">
-            <h2>কৃত্রিম বুদ্ধিমত্তা বা Artificial Intelligence - ২য় খণ্ড: AI-এর বিবর্তন</h2>
-            <p>১৯৫০-এর সেই 'বোকা মেশিন' থেকে আজকের Frontier Models: এক অবিশ্বাস্য যান্ত্রিক বিবর্তন আজকের দিনে দাঁড়িয়ে যাঁরা ভাবছেন AI বোধহয় গত পরশুদিন কোনো গ্যারেজে হঠাৎ জন্ম নিয়েছে, তাঁরা মস্ত বড় ভুল করছেন। এই গল্পের শিকড় প্রায় সত্তর বছর গভীরে প্রোথিত...</p>
+            <h2><a href="{{ post.url | relative_url }}" style="color: #8b0000; text-decoration: none;">{{ post.title }}</a></h2>
+            {{ post.content }}
         </div>
+        {% endfor %}
     </div>
 
     <footer>
